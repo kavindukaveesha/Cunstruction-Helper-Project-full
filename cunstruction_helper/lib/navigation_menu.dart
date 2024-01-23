@@ -1,7 +1,9 @@
-import 'package:cunstruction_helper/features/shop/screens/Main_page/main_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/home/widgets/Main_page/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import 'features/shop/screens/myPosts/my_posts.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
@@ -39,8 +41,8 @@ class NavigationController extends GetxController {
 
   final screens = [
     const HomePage1(),
-    Container(color: Colors.purple),
     Container(color: Colors.orange),
-    Container(color: Colors.blue)
+    Container(color: Colors.blue),
+    const MyPosts(),
   ];
 }

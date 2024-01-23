@@ -1,6 +1,6 @@
 import 'package:cunstruction_helper/features/authentication/screens/login_screen/login_screen.dart';
 import 'package:cunstruction_helper/features/authentication/screens/welcome_screen/welcome_screen.dart';
-import 'package:cunstruction_helper/features/shop/screens/Main_page/main_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/home/widgets/Main_page/main_page.dart';
 import 'package:cunstruction_helper/navigation_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

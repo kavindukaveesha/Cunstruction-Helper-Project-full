@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../../../../common/widgets/categories_image_text/vertical_image_text_home.dart';
 import '../../../../../utils/constants/image_strings.dart';
 
-
 class THomeCategories extends StatelessWidget {
   const THomeCategories({
     super.key,

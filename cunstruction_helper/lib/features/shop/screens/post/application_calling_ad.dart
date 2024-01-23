@@ -118,7 +118,8 @@ class AdContainer extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  ExpandedWidget(
+                  ExpandedTextWidget(
+                      textLength: 150,
                       text:
                           'ඉදිකිරීම් ව්‍යාපෘතියට නවීන වාස්තු විද්‍යාත්මක සැලසුම් සහ උසස් ශිල්පීය හැකියාවන් ඇතුළත් නව නේවාසික නිවසක් සංවර්ධනය කිරීම ඇතුළත් වේ. මෙම ව්‍යාපෘතියේ ඉඩකඩ සහිත පිරිසැලසුමක්, බලශක්ති කාර්යක්ෂම පද්ධති සහ කල් පවතින කල්පැවැත්ම සඳහා උසස් තත්ත්වයේ ද්‍රව්‍ය ඇතුළත් වේ. ඉදිකිරීම් සැලැස්ම තිරසාරත්වයට සහ සෞන්දර්යාත්මක ආකර්ෂණයට ප්‍රමුඛත්වය දෙන අතර සුවපහසු සහ පාරිසරික සවිඥානකත්වයක් සහතික කරයි.')
                 ],
@@ -162,9 +163,8 @@ class AdContainer extends StatelessWidget {
                 children: [
                   TextButton(
                       style: TextButton.styleFrom(
-                          foregroundColor: const Color.fromARGB(255, 6, 9, 195)
-                          ,
-                          ),
+                        foregroundColor: const Color.fromARGB(255, 6, 9, 195),
+                      ),
                       onPressed: () {},
                       child: const InkWell(
                           child: Row(

@@ -1,18 +1,19 @@
 import 'package:cunstruction_helper/features/shop/screens/home/widgets/tab_bar_pages/tab_bar_company.dart';
+import 'package:cunstruction_helper/features/shop/screens/home/widgets/tab_bar_pages/tab_bar_employee.dart';
 import 'package:cunstruction_helper/features/shop/screens/home/widgets/tab_bar_pages/tab_bar_projects.dart';
 import 'package:cunstruction_helper/features/shop/screens/home/widgets/tab_bar_pages/tabbar_home.dart';
 import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
-import '../../../../common/widgets/custom_shape/containers/search_container.dart';
-import '../../../../common/widgets/profile/profile_icon_cart.dart';
-import '../../../../utils/constants/image_strings.dart';
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/constants/text_strings.dart';
-import '../home/widgets/home_text_image_categories.dart';
-import '../home/widgets/promo_slider.dart';
+import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
+import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
+import '../../../../../../common/widgets/profile/profile_icon_cart.dart';
+import '../../../../../../utils/constants/image_strings.dart';
+import '../../../../../../utils/constants/sizes.dart';
+import '../../../../../../utils/constants/text_strings.dart';
+import '../home_text_image_categories.dart';
+import '../promo_slider.dart';
 
 class HomePage1 extends StatelessWidget {
   const HomePage1({Key? key}) : super(key: key);
@@ -120,14 +121,14 @@ class HomePage1 extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
+            const Expanded(
               child: TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 children: [
-                  const HomePage(),
-                  const Company(),
-                  const Projects(),
-                  Container()
+                  HomePage(),
+                  Company(),
+                  Projects(),
+                  EmployeePage()
                 ],
               ),
             ),

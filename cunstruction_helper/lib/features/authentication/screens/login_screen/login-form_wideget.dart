@@ -1,4 +1,4 @@
-import 'package:cunstruction_helper/features/shop/screens/Main_page/main_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/home/widgets/Main_page/main_page.dart';
 import 'package:cunstruction_helper/utils/constants/sizes.dart';
 import 'package:cunstruction_helper/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

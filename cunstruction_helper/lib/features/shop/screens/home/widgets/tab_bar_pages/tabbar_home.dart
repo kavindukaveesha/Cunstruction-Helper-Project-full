@@ -1,4 +1,8 @@
+import 'package:cunstruction_helper/features/shop/screens/category/Category_row_list.dart';
+import 'package:cunstruction_helper/features/shop/screens/category/all_categories_display_page.dart';
+import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
@@ -38,16 +42,22 @@ class HomePage extends StatelessWidget {
                                     style: Theme.of(context)
                                         .textTheme
                                         .headlineSmall),
-                                const Text(
-                                  "Click to more..",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w400),
+                                TextButton(
+                                  onPressed: () {
+                                    Get.to(() => const AllCategoriesPage());
+                                  },
+                                  child: const Text(
+                                    "Click to more..",
+                                    style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w400,
+                                        color: TColors.appAccentColor),
+                                  ),
                                 )
                               ],
                             ),
                             const SizedBox(height: TSizes.spaceBtwItems),
-                            const THomeCategories(),
+                             CategoryRow(),
                           ],
                         ),
                       ],
@@ -75,22 +85,6 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          const Text('hello'),
-          const SizedBox(
-            height: 300,
-          ),
-          const Text('hello'),
-          const SizedBox(
-            height: 300,
-          ),
-          const Text('hello'),
-          const SizedBox(
-            height: 300,
-          ),
-          const Text('hello'),
-          const SizedBox(
-            height: 300,
           ),
         ],
       ),

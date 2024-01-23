@@ -1,13 +1,13 @@
+import 'package:cunstruction_helper/features/shop/screens/company/all_companies_display_page.dart';
 import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
 import '../../../../../../utils/constants/sizes.dart';
+import '../../../company/Company_row_list.dart';
 import '../../../post/application_calling_ad.dart';
-import '../../../post/application_calling_ads.dart';
-import '../home_text_image_categories.dart';
-import '../promo_slider.dart';
 
 class Company extends StatefulWidget {
   const Company({super.key});
@@ -47,16 +47,22 @@ class _CompanyState extends State<Company> {
                                     style: Theme.of(context)
                                         .textTheme
                                         .headlineSmall),
-                                const Text(
-                                  "Click to more..",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w400),
+                                TextButton(
+                                  onPressed: () {
+                                    Get.to(() => const AllCompaniesPage());
+                                  },
+                                  child: const Text(
+                                    "Click to more..",
+                                    style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w400,
+                                        color: TColors.appAccentColor),
+                                  ),
                                 )
                               ],
                             ),
                             const SizedBox(height: TSizes.spaceBtwItems),
-                            const THomeCategories(),
+                            CompanyRow(),
                           ],
                         ),
                       ],
@@ -81,7 +87,7 @@ class _CompanyState extends State<Company> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               DropdownButton<String>(
-                dropdownColor: Color.fromARGB(255, 253, 249, 249),
+                dropdownColor: const Color.fromARGB(255, 253, 249, 249),
                 padding: const EdgeInsets.all(10),
                 value: selectedLocation,
                 onChanged: (String? newValue) {
@@ -105,7 +111,7 @@ class _CompanyState extends State<Company> {
                 hint: const Text('Location'),
               ),
               DropdownButton<String>(
-                dropdownColor: Color.fromARGB(255, 253, 249, 249),
+                dropdownColor: const Color.fromARGB(255, 253, 249, 249),
                 padding: const EdgeInsets.all(10),
                 value: selectedCategory,
                 onChanged: (String? newValue) {

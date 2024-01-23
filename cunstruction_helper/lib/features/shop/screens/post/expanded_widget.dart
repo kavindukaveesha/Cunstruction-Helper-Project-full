@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 
-class ExpandedWidget extends StatefulWidget {
+class ExpandedTextWidget extends StatefulWidget {
+  final int textLength;
   final String text;
-  const ExpandedWidget({super.key, required this.text});
+  const ExpandedTextWidget(
+      {super.key, required this.text, required this.textLength});
 
   @override
-  State<ExpandedWidget> createState() => _ExpandedWidgetState();
+  State<ExpandedTextWidget> createState() => _ExpandedWidgetState();
 }
 
-class _ExpandedWidgetState extends State<ExpandedWidget> {
+class _ExpandedWidgetState extends State<ExpandedTextWidget> {
   late String firstHalf;
   late String secondHalf;
   bool flag = true;
+
   @override
   void initState() {
     super.initState();
-    if (widget.text.length > 150) {
-      firstHalf = widget.text.substring(0, 150);
-      secondHalf = widget.text.substring(151, widget.text.length);
+    if (widget.text.length > widget.textLength) {
+      firstHalf = widget.text.substring(0, widget.textLength);
+      secondHalf =
+          widget.text.substring(widget.textLength + 1, widget.text.length);
     } else {
       firstHalf = widget.text;
       secondHalf = "";
