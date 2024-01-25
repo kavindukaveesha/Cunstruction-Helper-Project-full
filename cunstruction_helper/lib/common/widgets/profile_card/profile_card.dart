@@ -27,7 +27,7 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 242, 248, 255),
+      color: const Color.fromARGB(255, 245, 246, 249),
       elevation: 5,
       margin: const EdgeInsets.all(16),
       child: Padding(
@@ -60,6 +60,16 @@ class ProfileCard extends StatelessWidget {
                   '4.5',
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
                 ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'verified',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.green),
+                )
               ],
             ),
             const SizedBox(

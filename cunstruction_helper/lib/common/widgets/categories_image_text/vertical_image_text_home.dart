@@ -34,14 +34,16 @@ class TVerticalImageTextCategories extends StatelessWidget {
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Center(
-                child: Image(image: AssetImage(image), fit: BoxFit.cover),
+                child: CircleAvatar(
+                  backgroundImage: NetworkImage(image),
+                ),
               ),
             ),
 
             /// Text
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             SizedBox(
-              width: 55,
+              width: MediaQuery.of(context).size.width * 0.1,
               child: Text(
                 title,
                 style: Theme.of(context)

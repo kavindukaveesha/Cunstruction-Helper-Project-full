@@ -1,5 +1,4 @@
-import 'package:cunstruction_helper/features/shop/screens/category/Category_row_list.dart';
-import 'package:cunstruction_helper/features/shop/screens/category/all_categories_display_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/category/screen/display_categories/all_categories_display_page.dart';
 import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +7,7 @@ import '../../../../../../common/widgets/custom_shape/containers/primary_header_
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
 import '../../../../../../utils/constants/image_strings.dart';
 import '../../../../../../utils/constants/sizes.dart';
+import '../../../category/screen/home_page_category_row/Category_row_list.dart';
 import '../home_text_image_categories.dart';
 import '../promo_slider.dart';
 
@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: TSizes.spaceBtwItems),
-                             CategoryRow(),
+                            CategoryRow(),
                           ],
                         ),
                       ],

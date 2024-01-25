@@ -6,14 +6,9 @@ import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
-import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
-import '../../../../../../common/widgets/profile/profile_icon_cart.dart';
 import '../../../../../../utils/constants/image_strings.dart';
-import '../../../../../../utils/constants/sizes.dart';
+
 import '../../../../../../utils/constants/text_strings.dart';
-import '../home_text_image_categories.dart';
-import '../promo_slider.dart';
 
 class HomePage1 extends StatelessWidget {
   const HomePage1({Key? key}) : super(key: key);
@@ -124,12 +119,7 @@ class HomePage1 extends StatelessWidget {
             const Expanded(
               child: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
-                children: [
-                  HomePage(),
-                  Company(),
-                  Projects(),
-                  EmployeePage()
-                ],
+                children: [HomePage(), Company(), Projects(), EmployeePage()],
               ),
             ),
           ],

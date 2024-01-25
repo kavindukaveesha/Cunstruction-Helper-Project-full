@@ -109,12 +109,7 @@ class AdContainer extends StatelessWidget {
                                 fontWeight: FontWeight.w700)),
                       ])),
 
-                  // Expanded(
-                  //     child: SingleChildScrollView(
-                  //   child: ExpandedWidget(
-                  //       text:
-                  //           "The construction project involves the development of a new residential home, encompassing modern architectural design and superior craftsmanship. This project will feature a spacious layout, energy-efficient systems, and high-quality materials for lasting durability. The construction plan prioritizes sustainability and aesthetic appeal, ensuring a comfortable and environmentally conscious "),
-                  // ))
+                
                   SizedBox(
                     height: 10,
                   ),

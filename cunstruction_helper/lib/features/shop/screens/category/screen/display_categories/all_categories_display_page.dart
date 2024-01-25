@@ -1,8 +1,9 @@
-import 'package:cunstruction_helper/features/shop/screens/category/category_list.dart';
+import 'package:cunstruction_helper/features/shop/screens/category/screen/display_categories/category_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
-import '../../../../utils/constants/colors.dart';
+import '../../../../../../utils/constants/colors.dart';
 
 class AllCategoriesPage extends StatelessWidget {
   const AllCategoriesPage({super.key});
@@ -19,14 +20,16 @@ class AllCategoriesPage extends StatelessWidget {
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+          },
         ),
       ),
       body: Stack(
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CategoryListView(),
+            child: CategoryGridView(),
           ),
         ],
       ),

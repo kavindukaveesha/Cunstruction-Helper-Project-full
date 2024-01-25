@@ -1,10 +1,13 @@
+import 'package:cunstruction_helper/features/shop/screens/customers/screen/display_customers/all_companies_display_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/customers/screen/top_customers_row/Company_row_list.dart';
+import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
 import '../../../../../../utils/constants/sizes.dart';
 import '../../../post/application_calling_ad.dart';
-import '../home_text_image_categories.dart';
 
 class Projects extends StatefulWidget {
   const Projects({super.key});
@@ -40,20 +43,26 @@ class _ProjectsState extends State<Projects> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Top Companies',
+                                Text('Top Customers',
                                     style: Theme.of(context)
                                         .textTheme
                                         .headlineSmall),
-                                const Text(
-                                  "Click to more..",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w400),
+                                TextButton(
+                                  onPressed: () {
+                                    Get.to(() => AllCustomersPage());
+                                  },
+                                  child: const Text(
+                                    "Click to more..",
+                                    style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w400,
+                                        color: TColors.appAccentColor),
+                                  ),
                                 )
                               ],
                             ),
                             const SizedBox(height: TSizes.spaceBtwItems),
-                            const THomeCategories(),
+                            CustomersRow(),
                           ],
                         ),
                       ],
@@ -69,7 +78,7 @@ class _ProjectsState extends State<Projects> {
             ),
           ),
           Text(
-            'Cunstruction Projects',
+            'Application Calling',
             style: Theme.of(context).textTheme.displaySmall,
           ),
 

@@ -1,4 +1,4 @@
-import 'package:cunstruction_helper/features/shop/screens/company/all_companies_display_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/company/screen/display_companies/all_companies_display_page.dart';
 import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
 import '../../../../../../utils/constants/sizes.dart';
-import '../../../company/Company_row_list.dart';
+import '../../../company/screen/compay_page_topCompany_row/Company_row_list.dart';
 import '../../../post/application_calling_ad.dart';
 
 class Company extends StatefulWidget {
@@ -49,7 +49,7 @@ class _CompanyState extends State<Company> {
                                         .headlineSmall),
                                 TextButton(
                                   onPressed: () {
-                                    Get.to(() => const AllCompaniesPage());
+                                    Get.to(() => AllCompaniesPage());
                                   },
                                   child: const Text(
                                     "Click to more..",
@@ -62,7 +62,7 @@ class _CompanyState extends State<Company> {
                               ],
                             ),
                             const SizedBox(height: TSizes.spaceBtwItems),
-                            CompanyRow(),
+                            CompaniesRow(),
                           ],
                         ),
                       ],
