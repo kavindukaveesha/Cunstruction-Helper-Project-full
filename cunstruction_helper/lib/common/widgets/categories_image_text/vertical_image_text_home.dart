@@ -26,7 +26,7 @@ class TVerticalImageTextCategories extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              width: 56,
+              width: 60,
               height: 56,
               padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
@@ -43,7 +43,7 @@ class TVerticalImageTextCategories extends StatelessWidget {
             /// Text
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.1,
+              width: MediaQuery.of(context).size.width * 0.2,
               child: Text(
                 title,
                 style: Theme.of(context)

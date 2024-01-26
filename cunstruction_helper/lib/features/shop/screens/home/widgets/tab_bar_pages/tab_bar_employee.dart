@@ -1,15 +1,11 @@
-import 'package:cunstruction_helper/common/widgets/profile_card/profile_card.dart';
-import 'package:cunstruction_helper/features/shop/screens/Employee/employee_list_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/Employee/screen/display_customers/employees_list_page.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../../../../../common/widgets/categories_image_text/vertical_image_text_home.dart';
 import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
-import '../../../../../../utils/constants/image_strings.dart';
+import '../../../../../../common/widgets/profile_card/profile_card.dart';
 import '../../../../../../utils/constants/sizes.dart';
-import '../home_text_image_categories.dart';
-import '../promo_slider.dart';
+import '../../../Employee/screen/top_employee_row/employee_row_list.dart';
 
 class EmployeePage extends StatefulWidget {
   const EmployeePage({super.key});
@@ -23,8 +19,10 @@ class _EmployeePageState extends State<EmployeePage> {
   Widget build(BuildContext context) {
     String selectedLocation = 'Colombo';
     String selectedCategory = 'Electric';
+
     return SingleChildScrollView(
-      child: Column(children: [
+        child: Column(
+      children: [
         TPrimaryHeaderContainer(
           child: Column(
             children: [
@@ -48,21 +46,10 @@ class _EmployeePageState extends State<EmployeePage> {
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall),
-                              InkWell(
-                                onTap: () {
-                                  Get.to(() => const EMployeesList());
-                                },
-                                child: const Text(
-                                  "Click to more..",
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              )
                             ],
                           ),
                           const SizedBox(height: TSizes.spaceBtwItems),
-                          const THomeCategories(),
+                          EmployeesRow(),
                         ],
                       ),
                     ],
@@ -138,123 +125,8 @@ class _EmployeePageState extends State<EmployeePage> {
           ],
         ),
         //  card row
-
-        Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 10),
-              child: Row(
-                children: [
-                  Text(
-                    'Category 1',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  const Text('(23)')
-                ],
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              height: 410,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 6,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) {
-                  return ProfileCard(
-                      fullName: "Kavindu Kaveesha",
-                      ratelow: 25000,
-                      rateHeigh: 35000,
-                      title: "Softwaren Engineer",
-                      category: "It",
-                      location: "Colombo",
-                      onHirePressed: () {},
-                      image: TImages.loginImg);
-                },
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 10),
-              child: Row(
-                children: [
-                  Text(
-                    'Category 2',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  const Text('(23)')
-                ],
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              height: 410,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 6,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) {
-                  return ProfileCard(
-                      fullName: "Kavindu Kaveesha",
-                      ratelow: 25000,
-                      rateHeigh: 35000,
-                      title: "Softwaren Engineer",
-                      category: "It",
-                      location: "Colombo",
-                      onHirePressed: () {},
-                      image: TImages.loginImg);
-                },
-              ),
-            ),
-          ],
-        ),
-
-        const SizedBox(
-          height: 20,
-        ),
-        Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 10),
-              child: Row(
-                children: [
-                  Text(
-                    'Category 2',
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                  const Text('(23)')
-                ],
-              ),
-            ),
-            SizedBox(
-              width: double.infinity,
-              height: 410,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: 6,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) {
-                  return ProfileCard(
-                      fullName: "Kavindu Kaveesha",
-                      ratelow: 25000,
-                      rateHeigh: 35000,
-                      title: "Softwaren Engineer",
-                      category: "It",
-                      location: "Colombo",
-                      onHirePressed: () {},
-                      image: TImages.loginImg);
-                },
-              ),
-            ),
-          ],
-        )
-      ]),
-    );
+        EmployeesList()
+      ],
+    ));
   }
 }

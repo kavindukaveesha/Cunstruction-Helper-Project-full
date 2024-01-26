@@ -1,24 +1,25 @@
+import 'package:cunstruction_helper/features/shop/screens/Employee/controller/get_all_employees.dart';
+import 'package:cunstruction_helper/features/shop/screens/Employee/model/EmployeeModel.dart';
+
 import 'package:flutter/material.dart';
 
-import '../../../../../../../common/widgets/categories_image_text/vertical_image_text_home.dart';
-import '../../controller/get_all_customers.dart';
-import '../../model/customer_model.dart';
+import '../../../../../../../../common/widgets/categories_image_text/vertical_image_text_home.dart';
 
 // Create a StatelessWidget named CategoryRow
-class CustomersRow extends StatelessWidget {
+class EmployeesRow extends StatelessWidget {
   // Instantiate a CategoryController for fetching categories
-  final CustomerController customerController = CustomerController();
+  final EmployeeController employeeController = EmployeeController();
 
-  // Constructor for the EmpployeeRow widget
-  CustomersRow({super.key});
+  // Constructor for the CategoryRow widget
+  EmployeesRow({super.key});
 
   // Build method for constructing the widget
   @override
   Widget build(BuildContext context) {
-    // Use FutureBuilder to asynchronously fetch a list of EmpployeeModel
-    return FutureBuilder<List<CustomerModel>>(
-      future: customerController
-          .fetchCustomers(), // Fetch employees using the EmployeeController
+    // Use FutureBuilder to asynchronously fetch a list of CategoryModel
+    return FutureBuilder<List<EmployeeModel>>(
+      future: employeeController
+          .fetchEmployees(), // Fetch categories using the CategoryController
       builder: (context, snapshot) {
         // Check the connection state for loading, and show a loading indicator if waiting.until get data show CircularProgressIndicator
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -30,8 +31,8 @@ class CustomersRow extends StatelessWidget {
         }
         // If there are no errors, display the ListView with fetched data
         else {
-          // Extract the list of EmployeeModel from the snapshot data
-          final List<CustomerModel> customers = snapshot.data!;
+          // Extract the list of CategoryModel from the snapshot data
+          final List<EmployeeModel> employees = snapshot.data!;
 
           // Return a horizontal ListView of TVerticalImageTextCategories
           return SizedBox(
@@ -40,13 +41,13 @@ class CustomersRow extends StatelessWidget {
             child: ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: customers.length,
+              itemCount: employees.length,
               itemBuilder: (_, index) {
-                // Display each employee using the TVerticalImageTextCategories widget
+                // Display each category using the TVerticalImageTextCategories widget
                 return TVerticalImageTextCategories(
-                  image: customers[index].image,
+                  image: employees[index].image,
                   title:
-                      '${customers[index].customerName} ${customers[index].customerName}',
+                      '${employees[index].firstName} ${employees[index].lastName}',
                   // onTap: () {
                   //   // goto  according category Details display page.
                   //   Get.to(() => SearchingResultModelPage(
