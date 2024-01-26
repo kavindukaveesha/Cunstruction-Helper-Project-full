@@ -2,7 +2,7 @@ import 'package:cunstruction_helper/features/shop/screens/myPosts/post_list.dart
 import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../post/expanded_widget.dart';
+import '../Advertistment/expanded_widget.dart';
 
 class MyPosts extends StatelessWidget {
   const MyPosts({super.key});

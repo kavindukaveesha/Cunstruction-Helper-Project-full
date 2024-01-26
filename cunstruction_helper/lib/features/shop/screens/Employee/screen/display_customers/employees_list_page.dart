@@ -1,3 +1,4 @@
+import 'package:cunstruction_helper/common/widgets/profile_card/profile_card_hori.dart';
 import 'package:cunstruction_helper/features/shop/screens/Employee/controller/get_all_employees.dart';
 import 'package:cunstruction_helper/features/shop/screens/Employee/model/EmployeeModel.dart';
 
@@ -10,6 +11,10 @@ class EmployeesList extends StatelessWidget {
   EmployeesList({Key? key}) : super(key: key);
 
   List<Map<String, dynamic>> categories = [
+    {'categoryName': 'Electric'},
+    {'categoryName': 'Garden'},
+    {'categoryName': 'Plumbing'},
+    {'categoryName': 'IT-Solution'},
     {'categoryName': 'Electric'},
     {'categoryName': 'Garden'},
     {'categoryName': 'Plumbing'},
@@ -53,7 +58,7 @@ class EmployeesList extends StatelessWidget {
                       ),
                       SizedBox(
                         width: double.infinity,
-                        height: 410,
+                        height: 250,
                         child: ListView.builder(
                           shrinkWrap: true,
                           itemCount: 6,
@@ -63,7 +68,7 @@ class EmployeesList extends StatelessWidget {
                                 index]; // Fix: Change 'em.employeeList' to 'employees'
                             // Note: You need to replace the following variables with actual data from your EmployeeModel
 
-                            return ProfileCard(
+                            return ProfileCardHori(
                               fullName:
                                   '${employee.firstName} ${employee.lastName}', // Fix: Use the category name
                               rank: 'rank',

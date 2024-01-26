@@ -32,8 +32,7 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.7,
-      height: MediaQuery.of(context).size.height * 0.5,
+      width: MediaQuery.of(context).size.width * 0.9,
       child: Card(
         color: const Color.fromARGB(255, 242, 248, 255),
         elevation: 5,
@@ -46,46 +45,56 @@ class ProfileCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.38,
-                    child: Text(
-                      fullName,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      style: DefaultTextStyle.of(context).style,
-                      children: <TextSpan>[
-                        const TextSpan(
-                          text: 'Rank: ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black38, // Set your preferred color
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: NetworkImage(image),
+                        radius: 50,
+                      ),
+                      Column(
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.38,
+                            child: Text(
+                              fullName,
+                              style: const TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text: rank,
-                          style: const TextStyle(
-                            fontSize: 16, // Set your preferred font size
-                            color: TColors
-                                .appAccentColor, // Set your preferred color
+                          RichText(
+                            text: TextSpan(
+                              style: DefaultTextStyle.of(context).style,
+                              children: <TextSpan>[
+                                const TextSpan(
+                                  text: 'Rank: ',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors
+                                        .black38, // Set your preferred color
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: rank,
+                                  style: const TextStyle(
+                                    fontSize:
+                                        16, // Set your preferred font size
+                                    color: TColors
+                                        .appAccentColor, // Set your preferred color
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),
               const SizedBox(
                 height: 10,
-              ),
-              CircleAvatar(
-                backgroundImage: NetworkImage(image),
-                radius: 50,
               ),
               const SizedBox(
                 height: 5,
@@ -197,7 +206,7 @@ class ProfileCard extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 1),
               SizedBox(
                 width: 100, // Set full width
                 height: 50, // Set height

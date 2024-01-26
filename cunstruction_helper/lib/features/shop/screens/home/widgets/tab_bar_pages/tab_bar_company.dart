@@ -7,7 +7,7 @@ import '../../../../../../common/widgets/custom_shape/containers/primary_header_
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
 import '../../../../../../utils/constants/sizes.dart';
 import '../../../company/screen/compay_page_topCompany_row/Company_row_list.dart';
-import '../../../post/application_calling_ad.dart';
+import '../../../Advertistment/application_calling_ad.dart';
 
 class Company extends StatefulWidget {
   const Company({super.key});

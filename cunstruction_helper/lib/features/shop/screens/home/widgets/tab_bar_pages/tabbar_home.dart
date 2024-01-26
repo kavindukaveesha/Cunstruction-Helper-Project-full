@@ -8,8 +8,7 @@ import '../../../../../../common/widgets/custom_shape/containers/search_containe
 import '../../../../../../utils/constants/image_strings.dart';
 import '../../../../../../utils/constants/sizes.dart';
 import '../../../category/screen/home_page_category_row/Category_row_list.dart';
-import '../home_text_image_categories.dart';
-import '../promo_slider.dart';
+import '../slider/screen/promo_slider.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -75,15 +74,7 @@ class HomePage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
-              children: [
-                TPromoDotSlider(
-                  banners: [
-                    TImages.constructionBanner1,
-                    TImages.constructionBanner2,
-                    TImages.constructionBanner3
-                  ],
-                ),
-              ],
+              children: [TPromoDotSlider()],
             ),
           ),
         ],

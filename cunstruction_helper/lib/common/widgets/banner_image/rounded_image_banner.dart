@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/sizes.dart';
 
-
 class TRoundedBannerImage extends StatelessWidget {
   const TRoundedBannerImage({
     super.key,
@@ -16,7 +15,6 @@ class TRoundedBannerImage extends StatelessWidget {
     required this.imageUrl,
     this.fit = BoxFit.contain,
     this.backgroundColor = TColors.light,
-    this.isNetworkImage = false,
     this.borderRadius = TSizes.md,
   });
 
@@ -27,7 +25,6 @@ class TRoundedBannerImage extends StatelessWidget {
   final Color backgroundColor;
   final BoxFit? fit;
   final EdgeInsetsGeometry? padding;
-  final bool isNetworkImage;
   final VoidCallback? onPressed;
   final double borderRadius;
 
@@ -39,10 +36,15 @@ class TRoundedBannerImage extends StatelessWidget {
         width: width,
         height: height,
         padding: padding,
-        decoration: BoxDecoration(border: border, color: backgroundColor, borderRadius: BorderRadius.circular(borderRadius)),
+        decoration: BoxDecoration(
+            border: border,
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(borderRadius)),
         child: ClipRRect(
-          borderRadius: applyImageRadius ?  BorderRadius.circular(borderRadius) : BorderRadius.zero,
-          child: Image(fit: fit, image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(imageUrl) as ImageProvider),
+          borderRadius: applyImageRadius
+              ? BorderRadius.circular(borderRadius)
+              : BorderRadius.zero,
+          child: Image(fit: fit, image: NetworkImage(imageUrl)),
         ),
       ),
     );

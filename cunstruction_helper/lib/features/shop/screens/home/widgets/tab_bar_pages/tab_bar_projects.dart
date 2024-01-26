@@ -1,3 +1,4 @@
+import 'package:cunstruction_helper/features/shop/screens/Advertistment/Project_selling_advertistment/screen/project_selling_ad_list.dart';
 import 'package:cunstruction_helper/features/shop/screens/customers/screen/display_customers/all_companies_display_page.dart';
 import 'package:cunstruction_helper/features/shop/screens/customers/screen/top_customers_row/Company_row_list.dart';
 import 'package:cunstruction_helper/utils/constants/colors.dart';
@@ -7,7 +8,7 @@ import 'package:get/get.dart';
 import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
 import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
 import '../../../../../../utils/constants/sizes.dart';
-import '../../../post/application_calling_ad.dart';
+import '../../../Advertistment/application_calling_ad.dart';
 
 class Projects extends StatefulWidget {
   const Projects({super.key});
@@ -78,7 +79,7 @@ class _ProjectsState extends State<Projects> {
             ),
           ),
           Text(
-            'Application Calling',
+            'Project Selling',
             style: Theme.of(context).textTheme.displaySmall,
           ),
 
@@ -138,35 +139,7 @@ class _ProjectsState extends State<Projects> {
             ],
           ),
           // Filter ads
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 15,
-              top: 10,
-            ),
-            child: Row(
-              children: [
-                Text(
-                  'All Ads',
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                Text(
-                  '(26)',
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              ],
-            ),
-          ),
-          ListView.builder(
-            shrinkWrap:
-                true, // Use shrinkWrap to make ListView height based on its children
-            physics:
-                const NeverScrollableScrollPhysics(), // Disable scrolling for the ListView
-            itemCount:
-                4, // Adjust the itemCount based on the number of AdContainers you want
-            itemBuilder: (context, index) {
-              return const AdContainer();
-            },
-          ),
+         ProjectSellingList()
         ],
       ),
     );

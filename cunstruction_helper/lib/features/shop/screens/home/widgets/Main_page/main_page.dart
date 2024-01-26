@@ -64,7 +64,7 @@ class HomePage1 extends StatelessWidget {
         ],
       ),
       body: DefaultTabController(
-        length: 4,
+        length: 5,
         child: Column(
           children: [
             Container(
@@ -75,42 +75,66 @@ class HomePage1 extends StatelessWidget {
                 unselectedLabelColor: Color.fromARGB(95, 3, 3, 3),
                 unselectedLabelStyle: TextStyle(),
                 indicatorColor: TColors.appSecondaryColor,
-                padding: EdgeInsets.all(4),
+                padding: EdgeInsets.all(1),
                 tabs: [
                   Tab(
-                    icon: Icon(Iconsax.home),
+                    icon: Icon(
+                      Iconsax.home,
+                      size: 25,
+                    ),
                     iconMargin: EdgeInsets.all(2),
                     child: Text(
                       'Home',
                       style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+                          TextStyle(fontSize: 8, fontWeight: FontWeight.w700),
                     ),
                   ),
                   Tab(
-                    icon: Icon(Iconsax.buildings),
+                    icon: Icon(
+                      Iconsax.folder_minus,
+                      size: 25,
+                    ),
                     iconMargin: EdgeInsets.all(2),
                     child: Text(
-                      'Company',
+                      'Applications',
                       style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+                          TextStyle(fontSize: 8, fontWeight: FontWeight.w700),
                     ),
                   ),
                   Tab(
-                    icon: Icon(Iconsax.activity),
+                    icon: Icon(
+                      Iconsax.activity,
+                      size: 25,
+                    ),
                     iconMargin: EdgeInsets.all(2),
                     child: Text(
                       'Projects',
                       style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+                          TextStyle(fontSize: 8, fontWeight: FontWeight.w700),
                     ),
                   ),
                   Tab(
-                    icon: Icon(Iconsax.user),
+                    icon: Icon(
+                      Iconsax.building,
+                      size: 25,
+                    ),
                     iconMargin: EdgeInsets.all(2),
                     child: Text(
-                      'Employee',
+                      'Companies',
                       style:
-                          TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+                          TextStyle(fontSize: 8, fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  Tab(
+                    icon: Icon(
+                      Iconsax.user,
+                      size: 25,
+                    ),
+                    iconMargin: EdgeInsets.all(2),
+                    child: Text(
+                      'Employees',
+                      style:
+                          TextStyle(fontSize: 8, fontWeight: FontWeight.w700),
                     ),
                   ),
                 ],
@@ -119,7 +143,13 @@ class HomePage1 extends StatelessWidget {
             const Expanded(
               child: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
-                children: [HomePage(), Company(), Projects(), EmployeePage()],
+                children: [
+                  HomePage(),
+                  Company(),
+                  Projects(),
+                  EmployeePage(),
+                  EmployeePage()
+                ],
               ),
             ),
           ],
