@@ -1,4 +1,3 @@
-import 'package:cunstruction_helper/common/widgets/display_card/display_card.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/controller/get_all_companies.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/model/company_model.dart';
 
@@ -30,12 +29,12 @@ class CompanyList extends StatelessWidget {
               return Column(
                 children: [
                   
-                  DisplayCard(
-                    name: companies[index].companyName,
-                    image: companies[index].image,
-                    rate: 'rate',
-                    rank: 'rank',
-                  ),
+                  // DisplayCard(
+                  //   name: companies[index].companyName,
+                  //   image: companies[index].image,
+                  //   rate: 'rate',
+                  //   rank: 'rank',
+                  // ),
                 ],
               );
             },

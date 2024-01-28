@@ -8,7 +8,7 @@ class TElevatedButtonTheme {
 
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-        elevation: 0,
+        elevation: 3,
         shape: const RoundedRectangleBorder(),
         foregroundColor: Colors.white,
         backgroundColor: TColors.appSecondaryColor,
@@ -18,11 +18,11 @@ class TElevatedButtonTheme {
 
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-        elevation: 0,
+        elevation: 3,
         shape: const RoundedRectangleBorder(),
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
-        side: const BorderSide(color: TColors.appSecondaryColor),
+        side: const BorderSide(color: TColors.appPrimaryColor),
         padding: const EdgeInsets.symmetric(vertical: TSizes.buttonHeight)),
   );
 }

@@ -1,4 +1,4 @@
-import 'package:cunstruction_helper/features/shop/screens/company/controller/get_all_companies.dart';
+import 'package:cunstruction_helper/common/widgets/filter_buttons/filter_buttons.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/screen/display_companies/company_list_page.dart';
 import 'package:cunstruction_helper/features/shop/screens/customers/controller/get_all_customers.dart';
 import 'package:cunstruction_helper/features/shop/screens/customers/model/customer_model.dart';
@@ -40,60 +40,7 @@ class _AllCustomersPageState extends State<AllCustomersPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                DropdownButton<String>(
-                  dropdownColor: const Color.fromARGB(255, 253, 249, 249),
-                  padding: const EdgeInsets.all(10),
-                  value: selectedLocation,
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      selectedLocation = newValue!;
-                    });
-                  },
-                  items: <String>[
-                    'Colombo',
-                    'Gampaha',
-                    'Kandy',
-                    'Anuradapura',
-                  ]
-                      .map<DropdownMenuItem<String>>(
-                        (String value) => DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        ),
-                      )
-                      .toList(),
-                  hint: const Text('Location'),
-                ),
-                DropdownButton<String>(
-                  dropdownColor: const Color.fromARGB(255, 253, 249, 249),
-                  padding: const EdgeInsets.all(10),
-                  value: selectedCategory,
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      selectedCategory = newValue!;
-                    });
-                  },
-                  items: <String>['Electric', 'Garden', 'Plumbing']
-                      .map<DropdownMenuItem<String>>(
-                        (String value) => DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        ),
-                      )
-                      .toList(),
-                  hint: const Text('Category'),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.filter_list),
-                  onPressed: () {
-                    // Add your filter logic here
-                  },
-                ),
-              ],
-            ),
+            FilterButtonsRow(),
             FutureBuilder<List<CustomerModel>>(
                 future: widget.customerController.fetchCustomers(),
                 builder: (context, snapshot) {
@@ -122,7 +69,7 @@ class _AllCustomersPageState extends State<AllCustomersPage> {
                 }),
             const SizedBox(height: 8.0),
             Expanded(
-              child: CompanyList(),
+              child: VerCompanyList(),
             ),
           ],
         ),

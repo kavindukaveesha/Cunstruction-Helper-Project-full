@@ -1,14 +1,14 @@
-import 'package:cunstruction_helper/features/shop/screens/Advertistment/Project_selling_advertistment/screen/project_selling_ad_list.dart';
-import 'package:cunstruction_helper/features/shop/screens/customers/screen/display_customers/all_companies_display_page.dart';
-import 'package:cunstruction_helper/features/shop/screens/customers/screen/top_customers_row/Company_row_list.dart';
-import 'package:cunstruction_helper/utils/constants/colors.dart';
+import 'package:cunstruction_helper/features/shop/screens/Employee/screen/top_employee_row/employee_row_list.dart';
+import 'package:cunstruction_helper/features/shop/screens/company/screen/compay_page_topCompany_row/Company_row_list.dart';
+import 'package:cunstruction_helper/features/shop/screens/home/widgets/tab_bar_pages/tab_bar_companies.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../../../../../common/widgets/custom_shape/containers/primary_header_container.dart';
-import '../../../../../../common/widgets/custom_shape/containers/search_container.dart';
-import '../../../../../../utils/constants/sizes.dart';
-import '../../../Advertistment/application_calling_ad.dart';
+import '../../../../../../common/widgets/filter_buttons/filter_buttons.dart';
+import '../../../Advertistment/Project_selling_advertistment/screen/project_selling_ad_list.dart';
+import '../../../customers/screen/display_customers/all_companies_display_page.dart';
+import '../../../customers/screen/top_customers_row/Company_row_list.dart';
+import '../../../searching_result/pages/searching page.dart';
+import '../../Home_common/home_tprimaryheader_model.dart';
 
 class Projects extends StatefulWidget {
   const Projects({super.key});
@@ -23,125 +23,28 @@ class _ProjectsState extends State<Projects> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          TPrimaryHeaderContainer(
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.only(left: 15.0, right: 15.0, top: 10),
-                    child: Column(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text('Top Customers',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineSmall),
-                                TextButton(
-                                  onPressed: () {
-                                    Get.to(() => AllCustomersPage());
-                                  },
-                                  child: const Text(
-                                    "Click to more..",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.w400,
-                                        color: TColors.appAccentColor),
-                                  ),
-                                )
-                              ],
-                            ),
-                            const SizedBox(height: TSizes.spaceBtwItems),
-                            CustomersRow(),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: TSizes.appDefaultsize,
-                ),
-                const TSearchContainer(text: 'Search Want Your Want'),
-                const SizedBox(height: 10),
-              ],
-            ),
-          ),
-          Text(
-            'Project Selling',
-            style: Theme.of(context).textTheme.displaySmall,
-          ),
+        child: Column(
+      children: [
+        // Top company row and search bar
+        TprimaryHeaderModel(
+            topRowTitle: 'Top Customers',
+            horisontalRow: CompaniesRow(),
+            
+            more: 'Clicke to more',
+            clicktoMorePage: AllCustomersPage()),
 
-          // Filter ads
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              DropdownButton<String>(
-                dropdownColor: const Color.fromARGB(255, 253, 249, 249),
-                padding: const EdgeInsets.all(10),
-                value: selectedLocation,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedLocation = newValue!;
-                  });
-                },
-                items: <String>[
-                  'Colombo',
-                  'Gampaha',
-                  'Kandy',
-                  'Anuradapura',
-                ]
-                    .map<DropdownMenuItem<String>>(
-                      (String value) => DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      ),
-                    )
-                    .toList(),
-                hint: const Text('Location'),
-              ),
-              DropdownButton<String>(
-                dropdownColor: const Color.fromARGB(255, 253, 249, 249),
-                padding: const EdgeInsets.all(10),
-                value: selectedCategory,
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedCategory = newValue!;
-                  });
-                },
-                items: <String>['Electric', 'Garden', 'Plumbing']
-                    .map<DropdownMenuItem<String>>(
-                      (String value) => DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value),
-                      ),
-                    )
-                    .toList(),
-                hint: const Text('Category'),
-              ),
-              IconButton(
-                icon: const Icon(Icons.filter_list),
-                onPressed: () {
-                  // Add your filter logic here
-                },
-              ),
-            ],
-          ),
-          // Filter ads
-         ProjectSellingList()
-        ],
-      ),
-    );
+        // Title
+        Text(
+          'Projects',
+          style: Theme.of(context).textTheme.displaySmall,
+        ),
+
+        // Filter ads
+        FilterButtonsRow(),
+
+        //  All Employess
+        ProjectSellingList()
+      ],
+    ));
   }
 }

@@ -4,26 +4,26 @@ import 'package:flutter/material.dart';
 import '../../expanded_widget.dart';
 
 class ProjectSellingAd extends StatelessWidget {
-  final String fullName;
-  final String isVerified;
-  final String image;
+  final String postedUserFullName;
+  final String userIsVerified;
+  final String postedUserImage;
   final String postedDate;
   final String postedUserRate;
   final String projectTitle;
-  final String category;
+  final String cunstructionCategory;
   final String location;
   final String numberOfGigs;
   final String description;
 
   const ProjectSellingAd(
       {super.key,
-      required this.fullName,
-      required this.isVerified,
-      required this.image,
+      required this.postedUserFullName,
+      required this.userIsVerified,
+      required this.postedUserImage,
       required this.postedDate,
       required this.postedUserRate,
       required this.projectTitle,
-      required this.category,
+      required this.cunstructionCategory,
       required this.location,
       required this.numberOfGigs,
       required this.description});
@@ -52,7 +52,7 @@ class ProjectSellingAd extends StatelessWidget {
           children: [
             ListTile(
               leading: CircleAvatar(
-                backgroundImage: NetworkImage(image),
+                backgroundImage: NetworkImage(postedUserImage),
               ),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,12 +62,12 @@ class ProjectSellingAd extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(fullName),
+                          Text(postedUserFullName),
                           const SizedBox(
                             width: 5,
                           ),
                           Text(
-                            isVerified,
+                            userIsVerified,
                             style: const TextStyle(
                               color: Colors.green,
                               fontSize: 10,
@@ -118,11 +118,11 @@ class ProjectSellingAd extends StatelessWidget {
                     ],
                   ),
                   Text.rich(TextSpan(
-                      text: 'Category:',
+                      text: 'Cunstruction Type:',
                       style: const TextStyle(color: Colors.grey),
                       children: [
                         TextSpan(
-                            text: category,
+                            text: cunstructionCategory,
                             style: const TextStyle(
                                 color: Color.fromARGB(255, 87, 86, 86),
                                 fontWeight: FontWeight.w700)),

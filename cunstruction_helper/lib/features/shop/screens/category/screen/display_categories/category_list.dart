@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../searching_result/searching_result_model_page.dart';
 import '../../controller/getAllCategories.dart';
 import '../../model/Category_model.dart';
+import 'Category_card/allemployees_per_category.dart';
 import 'Category_card/category_card.dart';
 
 class CategoryGridView extends StatelessWidget {
@@ -37,7 +38,7 @@ class CategoryGridView extends StatelessWidget {
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
-                  Get.to(() => SearchingResultModelPage(
+                  Get.to(() => AllEmployeesPerCategory(
                       categories: categories, categoryIndex: index));
                 },
                 child: CategoryCard(

@@ -21,15 +21,22 @@ class EmployeeController {
             firstName: result['name']['first'],
             lastName: result['name']['last'],
             image: result['picture']['large'],
-            rate: '4.5',
-            rank: '1',
-            verified: 'Verified',
-            jobTitle: 'Software Enginner',
-            category: '',
-            location: '',
-            experience: '2 years',
-            salaryLow: '25000',
-            salaryHeigh: '50000');
+            rate: '3.5',
+            rank: '14',
+            verified: true,
+            jobTitle: 'jobTitle',
+            category: 'category',
+            location: 'location',
+            experience: 'experience',
+            salaryLow: '20000',
+            salaryHeigh: '30000',
+            description: 'description',
+            age: '${result['dob']['age']}',
+            address:
+                'No:${result['location']['street']['number']},${result['location']['street']['name']},${result['location']['city']}',
+            email: result['email'],
+            mobileNumber: result['phone'],
+            gender: result['gender']);
       }).toList();
     } else {
       throw Exception('Failed to load Employees');

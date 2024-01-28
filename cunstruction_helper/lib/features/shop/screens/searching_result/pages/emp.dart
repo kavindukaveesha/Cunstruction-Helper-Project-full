@@ -1,5 +1,5 @@
-import 'package:cunstruction_helper/common/widgets/profile_card/profile_card.dart';
-import 'package:cunstruction_helper/common/widgets/profile_card/profile_card_hori.dart';
+import 'package:cunstruction_helper/common/widgets/employee_profile_card/employee_profile_card.dart';
+import 'package:cunstruction_helper/common/widgets/employee_profile_card/employee_profile_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../Employee/controller/get_all_employees.dart';
@@ -33,18 +33,17 @@ class SearchEmp extends StatelessWidget {
                   // Handle onTap event
                   // Example: Get.to(() => YourNextScreen());
                 },
-                child: ProfileCardHori(
+                child: EmployeeProfileCard(
                   fullName: '${employee.firstName} ${employee.lastName}',
                   rank: 'rank',
                   image: employee.image,
                   rate: 'rate',
                   isverified: 'Verified',
                   jobTitle: 'Software Engineer',
-                  category:
-                      employee.category, // Use the category from the employee
-                  location: 'location',
-                  rangeLow: 10000,
-                  rangeHigh: 12000,
+                  // Use the category from the employee
+                  experience: '2',
+                  rangeLow: 100000,
+                  rangeHigh: 120000,
                   onHirePressed: () {
                     // Handle onHirePressed event
                   },

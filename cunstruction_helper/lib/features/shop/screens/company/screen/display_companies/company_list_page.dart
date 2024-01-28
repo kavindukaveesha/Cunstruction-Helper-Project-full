@@ -1,12 +1,11 @@
-import 'package:cunstruction_helper/common/widgets/display_card/display_card.dart';
+import 'package:flutter/material.dart';
+import 'package:cunstruction_helper/common/widgets/Company_profile_card/company_profile_card.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/controller/get_all_companies.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/model/company_model.dart';
 
-import 'package:flutter/material.dart';
-
-class CompanyList extends StatelessWidget {
+class VerCompanyList extends StatelessWidget {
   final CompanyController companyController = CompanyController();
-  CompanyList({super.key});
+  VerCompanyList({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,22 +19,31 @@ class CompanyList extends StatelessWidget {
           // Handle errors
           return Text('Error: ${snapshot.error}');
         } else {
-          // Display your GridView using the fetched data
+          // Display your ListView using the fetched data
           List<CompanyModel> companies = snapshot.data!;
 
           return ListView.builder(
             shrinkWrap: true,
             itemCount: companies.length,
             itemBuilder: (context, index) {
+              CompanyModel company = companies[index];
               return Column(
                 children: [
-                  
-                  DisplayCard(
-                    name: companies[index].companyName,
-                    image: companies[index].image,
+                  CompanyProfileCard(
+                    companyName: company.companyName,
+                    rank:
+                        'rank', // You may need to replace this with the actual rank property from your CompanyModel
+                    image:
+                        company.image, // Use the correct property for the image
                     rate: 'rate',
-                    rank: 'rank',
+
+                    experience:
+                        '2 years', // You may need to replace this with the actual experience property from your CompanyModel
+                    onHirePressed: () {}, isverified: 'Verified',
+                    cunstructionType: 'Residential Construction',
                   ),
+                  const SizedBox(
+                      height: 16), // Add some space between CompanyProfileCards
                 ],
               );
             },

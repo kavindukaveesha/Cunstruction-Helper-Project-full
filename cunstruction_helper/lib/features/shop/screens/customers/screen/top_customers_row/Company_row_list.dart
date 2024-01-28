@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../../../../common/widgets/categories_image_text/vertical_image_text_home.dart';
 import '../../controller/get_all_customers.dart';
@@ -47,11 +49,10 @@ class CustomersRow extends StatelessWidget {
                   image: customers[index].image,
                   title:
                       '${customers[index].customerName} ${customers[index].customerName}',
-                  // onTap: () {
-                  //   // goto  according category Details display page.
-                  //   Get.to(() => SearchingResultModelPage(
-                  //       categories: companies, categoryIndex: index));
-                  // }, // Specify the onTap callback (currently empty)
+                  onTap: () {
+                    // goto  according category Details display page.
+                    // Get.to(page);
+                  }, // Specify the onTap callback (currently empty)
                 );
               },
             ),

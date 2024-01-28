@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../../../../../../common/widgets/categories_image_text/vertical_image_text_home.dart';
 import '../../../searching_result/searching_result_model_page.dart';
 import '../../model/Category_model.dart';
+import '../display_categories/Category_card/allemployees_per_category.dart';
 
 // Create a StatelessWidget named CategoryRow
 class CategoryRow extends StatelessWidget {
@@ -28,6 +29,7 @@ class CategoryRow extends StatelessWidget {
         }
         // Check for errors, and display an error message if there's an error
         else if (snapshot.hasError) {
+          print('${snapshot.error}');
           return Text('Error: ${snapshot.error}');
         }
         // If there are no errors, display the ListView with fetched data
@@ -51,7 +53,7 @@ class CategoryRow extends StatelessWidget {
                       '${categories[index].title} ${categories[index].title}',
                   onTap: () {
                     // goto  according category Details display page.
-                    Get.to(() => SearchingResultModelPage(
+                    Get.to(() => AllEmployeesPerCategory(
                         categories: categories, categoryIndex: index));
                   }, // Specify the onTap callback (currently empty)
                 );

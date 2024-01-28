@@ -61,23 +61,24 @@ class ProjectSellingList extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: projectSellingAds.length,
                 itemBuilder: (context, index) {
+                  var projectSellingAd = projectSellingAds[index];
                   DateTime apiDateTime =
-                      DateTime.parse(projectSellingAds[index].postedDate);
+                      DateTime.parse(projectSellingAd.postedDate);
                   String formattedDate =
                       "${apiDateTime.year}/${apiDateTime.month}/${apiDateTime.day}";
 
                   return ProjectSellingAd(
-                      fullName:
-                          '${projectSellingAds[index].firstName} ${projectSellingAds[index].firstName}',
-                      isVerified: projectSellingAds[index].isVerified,
-                      image: projectSellingAds[index].imageAvatar,
+                      postedUserFullName:
+                          '${projectSellingAd.firstName} ${projectSellingAd.firstName}',
+                      userIsVerified:projectSellingAd.isVerified,
+                      postedUserImage: projectSellingAd.imageAvatar,
                       postedDate: formattedDate,
-                      postedUserRate: projectSellingAds[index].postedUserRate,
-                      projectTitle: projectSellingAds[index].projectTitle,
-                      category: projectSellingAds[index].category,
-                      location: projectSellingAds[index].location,
-                      numberOfGigs: projectSellingAds[index].numberOfGigs,
-                      description: projectSellingAds[index].description);
+                      postedUserRate: projectSellingAd.postedUserRate,
+                      projectTitle:projectSellingAd.projectTitle,
+                      cunstructionCategory: projectSellingAd.category,
+                      location: projectSellingAd.location,
+                      numberOfGigs:projectSellingAd.numberOfGigs,
+                      description: projectSellingAd.description);
                 },
               );
             }

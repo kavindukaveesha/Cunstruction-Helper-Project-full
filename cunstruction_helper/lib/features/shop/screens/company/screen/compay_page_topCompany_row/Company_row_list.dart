@@ -1,6 +1,7 @@
 // Import necessary packages and files
 import 'package:cunstruction_helper/features/shop/screens/category/controller/getAllCategories.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/model/company_model.dart';
+import 'package:cunstruction_helper/features/shop/screens/company/screen/display_profile/company_profile_display_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -47,16 +48,15 @@ class CompaniesRow extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: companies.length,
               itemBuilder: (_, index) {
-                // Display each category using the TVerticalImageTextCategories widget
+                var company = companies[index];
                 return TVerticalImageTextCategories(
-                  image: companies[index].image,
-                  title:
-                      '${companies[index].companyName} ${companies[index].companyName}',
-                  // onTap: () {
-                  //   // goto  according category Details display page.
-                  //   Get.to(() => SearchingResultModelPage(
-                  //       categories: companies, categoryIndex: index));
-                  // }, // Specify the onTap callback (currently empty)
+                  image: company.image,
+                  title: '${company.companyName} ${company.companyName}',
+                  onTap: () {
+                    // goto  according category Details display page.
+                    Get.to(
+                        () => CompanyProfileDisplayPAge(companyModel: company));
+                  }, // Specify the onTap callback (currently empty)
                 );
               },
             ),

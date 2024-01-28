@@ -2,8 +2,11 @@ import 'package:cunstruction_helper/features/shop/screens/Employee/controller/ge
 import 'package:cunstruction_helper/features/shop/screens/Employee/model/EmployeeModel.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../../../../../common/widgets/categories_image_text/vertical_image_text_home.dart';
+import '../display_profile/employee_profile_display_page.dart';
 
 // Create a StatelessWidget named CategoryRow
 class EmployeesRow extends StatelessWidget {
@@ -27,6 +30,7 @@ class EmployeesRow extends StatelessWidget {
         }
         // Check for errors, and display an error message if there's an error
         else if (snapshot.hasError) {
+          print(snapshot.error);
           return Text('Error: ${snapshot.error}');
         }
         // If there are no errors, display the ListView with fetched data
@@ -43,16 +47,17 @@ class EmployeesRow extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: employees.length,
               itemBuilder: (_, index) {
+                var employee = employees[index];
                 // Display each category using the TVerticalImageTextCategories widget
                 return TVerticalImageTextCategories(
                   image: employees[index].image,
                   title:
                       '${employees[index].firstName} ${employees[index].lastName}',
-                  // onTap: () {
-                  //   // goto  according category Details display page.
-                  //   Get.to(() => SearchingResultModelPage(
-                  //       categories: companies, categoryIndex: index));
-                  // }, // Specify the onTap callback (currently empty)
+                  onTap: () {
+                    Get.to(() => EmployeeProfileDisplayPage(
+                          employeeModel: employee,
+                        ));
+                  }, // Specify the onTap callback (currently empty)
                 );
               },
             ),

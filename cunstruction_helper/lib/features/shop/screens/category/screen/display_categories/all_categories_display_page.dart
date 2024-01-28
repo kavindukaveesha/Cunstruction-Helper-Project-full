@@ -15,7 +15,7 @@ class AllCategoriesPage extends StatelessWidget {
         titleSpacing: 30.0,
         backgroundColor: TColors.appPrimaryColor,
         title: Text(
-          'All Categories',
+          'All Jobs Categories',
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         leading: IconButton(

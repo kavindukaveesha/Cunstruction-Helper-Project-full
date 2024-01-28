@@ -1,10 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart'; // Import the dots_indicator package
-import 'package:cunstruction_helper/features/shop/screens/home/widgets/slider/controller/get_slidder_images.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../../utils/constants/colors.dart';
-import '../../../../../../../utils/constants/sizes.dart';
+import '../controller/get_slidder_images.dart';
 import '../model/slidder_model.dart';
 
 class TPromoDotSlider extends StatelessWidget {
@@ -61,19 +58,6 @@ class TPromoDotSlider extends StatelessWidget {
                   );
                 }).toList(),
               ),
-              // const SizedBox(height: TSizes.spaceBtwItems),
-              // DotsIndicator(
-              //   // Use DotsIndicator below the CarouselSlider
-              //   dotsCount: slidderImages.length,
-              //   position: 0, // Set the initial position as needed
-              //   decorator: const DotsDecorator(
-              //     size: Size.square(9.0),
-              //     activeSize: Size(18.0, 9.0),
-              //     color: TColors.grey,
-              //     activeColor: TColors.appAccentColor,
-              //     spacing: EdgeInsets.symmetric(horizontal: 3.0),
-              //   ),
-              // ),
             ],
           );
         }

@@ -23,6 +23,7 @@ class CategoryController {
       }).toList();
     } else {
       throw Exception('Failed to load categories');
+      
     }
   }
 }

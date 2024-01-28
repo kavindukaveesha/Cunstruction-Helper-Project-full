@@ -17,7 +17,7 @@ class CompanyController {
 
       return results.map((result) {
         return CompanyModel(
-          companyName: result['name']['first'],
+          companyName: '${result['name']['first']} ${result['name']['last']}',
           description: result['name']['last'],
           image: result['picture']['thumbnail'],
         );

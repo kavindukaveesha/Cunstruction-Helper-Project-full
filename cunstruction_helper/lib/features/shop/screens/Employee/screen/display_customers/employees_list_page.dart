@@ -1,10 +1,12 @@
-import 'package:cunstruction_helper/common/widgets/profile_card/profile_card_hori.dart';
+import 'package:cunstruction_helper/common/widgets/employee_profile_card/employee_profile_card.dart';
 import 'package:cunstruction_helper/features/shop/screens/Employee/controller/get_all_employees.dart';
 import 'package:cunstruction_helper/features/shop/screens/Employee/model/EmployeeModel.dart';
+import 'package:cunstruction_helper/features/shop/screens/Employee/screen/display_profile/employee_profile_display_page.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../../../../common/widgets/profile_card/profile_card.dart';
+
 
 class EmployeesList extends StatelessWidget {
   final EmployeeController employeeController = EmployeeController();
@@ -58,17 +60,15 @@ class EmployeesList extends StatelessWidget {
                       ),
                       SizedBox(
                         width: double.infinity,
-                        height: 250,
+                        height: MediaQuery.of(context).size.height * 0.46,
                         child: ListView.builder(
                           shrinkWrap: true,
                           itemCount: 6,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (_, index) {
-                            var employee = employees[
-                                index]; // Fix: Change 'em.employeeList' to 'employees'
-                            // Note: You need to replace the following variables with actual data from your EmployeeModel
+                            var employee = employees[index];
 
-                            return ProfileCardHori(
+                            return EmployeeProfileCard(
                               fullName:
                                   '${employee.firstName} ${employee.lastName}', // Fix: Use the category name
                               rank: 'rank',
@@ -76,12 +76,15 @@ class EmployeesList extends StatelessWidget {
                               rate: 'rate',
                               isverified: 'Verified',
                               jobTitle: 'Software Enginner',
-                              category: category[
-                                  'categoryName'], // Fix: Use the category name
-                              location: 'location',
-                              rangeLow: 10000,
-                              rangeHigh: 12000,
-                              onHirePressed: () {},
+
+                              experience: '2',
+                              rangeLow: 100000,
+                              rangeHigh: 120000,
+                              onHirePressed: () {
+                                Get.to(() => EmployeeProfileDisplayPage(
+                                      employeeModel: employee,
+                                    ));
+                              },
                             );
                           },
                         ),

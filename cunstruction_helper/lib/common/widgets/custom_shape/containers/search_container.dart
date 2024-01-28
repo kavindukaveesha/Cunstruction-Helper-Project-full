@@ -1,46 +1,55 @@
+import 'package:cunstruction_helper/features/shop/screens/searching_result/pages/searching%20page.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/constants/sizes.dart';
-import '../../../../utils/device/device_utility.dart';
-import '../../../../utils/helpers/helper_functions.dart';
+import 'package:get/get.dart';
 
+class SearchBarContainer extends StatefulWidget {
+  const SearchBarContainer({Key? key}) : super(key: key);
 
-class TSearchContainer extends StatelessWidget {
-  const TSearchContainer({
-    super.key, required this.text, this.icon = Iconsax.search_normal,  this.showBackground = true,  this.showBorder = true, this.onTap,
-  });
+  @override
+  _SearchBarState createState() => _SearchBarState();
+}
 
-  final String text;
-  final IconData? icon;
-  final bool showBackground, showBorder;
-  final VoidCallback? onTap;
+class _SearchBarState extends State<SearchBarContainer> {
+  final TextEditingController _searchController = TextEditingController();
+  bool isHovered = false;
+
+  void _onSearchPressed() {
+    String searchTerm = _searchController.text;
+    // Navigate to the search results page with the search term
+    Get.to(() => SearchingPage(searchTerm: searchTerm));
+  }
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
-    return GestureDetector(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-        child: Container(
-          width: TDeviceUtils.getScreenWidth(context),
-          padding: const EdgeInsets.all(TSizes.md),
-          decoration: BoxDecoration(
-            color: showBackground ? dark ?  TColors.dark : TColors.light : Colors.transparent,
-            borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-            border: showBorder ?  Border.all(color: TColors.grey) : null,
-          ),
-          child:  Row(
-            children: [
-              Icon(icon, color: TColors.darkerGrey),
-              const SizedBox(width: TSizes.spaceBtwItems),
-              Text(text, style: Theme.of(context).textTheme.bodySmall),
-            ],
+    return MouseRegion(
+      onHover: (_) => setState(() => isHovered = true),
+      onExit: (_) => setState(() {
+        isHovered = false;
+      }),
+      child: Container(
+        decoration: BoxDecoration(
+          color: isHovered
+              ? const Color.fromARGB(255, 242, 248, 255)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: TextField(
+          controller: _searchController,
+          decoration: InputDecoration(
+            hintText: 'Search...',
+            suffixIcon: IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: _onSearchPressed,
+            ),
           ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
   }
 }
