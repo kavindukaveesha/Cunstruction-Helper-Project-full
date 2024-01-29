@@ -1,7 +1,7 @@
 import 'package:cunstruction_helper/features/shop/screens/Employee/screen/display_customers/employees_list_page.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/screen/compay_page_topCompany_row/Company_row_list.dart';
 import 'package:cunstruction_helper/features/shop/screens/company/screen/display_companies/com_list_page.dart';
-import 'package:cunstruction_helper/features/shop/screens/company/screen/display_companies/company_list_page.dart';
+import 'package:cunstruction_helper/features/shop/screens/company/screen/display_companies/vertical_company%20_list.dart';
 import 'package:cunstruction_helper/features/shop/screens/home/Home_common/home_tprimaryheader_model.dart';
 import 'package:flutter/material.dart';
 

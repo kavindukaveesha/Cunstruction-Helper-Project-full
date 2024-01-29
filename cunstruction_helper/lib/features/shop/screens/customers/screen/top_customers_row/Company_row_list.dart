@@ -1,3 +1,4 @@
+import 'package:cunstruction_helper/features/shop/screens/customers/screen/display_profile/customer_profile_display_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -44,14 +45,14 @@ class CustomersRow extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: customers.length,
               itemBuilder: (_, index) {
+                var customer = customers[index];
                 // Display each employee using the TVerticalImageTextCategories widget
                 return TVerticalImageTextCategories(
                   image: customers[index].image,
-                  title:
-                      '${customers[index].customerName} ${customers[index].customerName}',
+                  title: '${customer.customerName} $customer.customerName}',
                   onTap: () {
-                    // goto  according category Details display page.
-                    // Get.to(page);
+                    Get.to(() =>
+                        CustomerProfileDisplayPAge(customerModel: customer));
                   }, // Specify the onTap callback (currently empty)
                 );
               },

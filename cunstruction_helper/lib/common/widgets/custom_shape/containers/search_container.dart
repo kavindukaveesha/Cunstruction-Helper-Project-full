@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SearchBarContainer extends StatefulWidget {
-  const SearchBarContainer({Key? key}) : super(key: key);
+  final Widget resultPage;
+  const SearchBarContainer({Key? key, required this.resultPage})
+      : super(key: key);
 
   @override
   _SearchBarState createState() => _SearchBarState();
@@ -16,7 +18,7 @@ class _SearchBarState extends State<SearchBarContainer> {
   void _onSearchPressed() {
     String searchTerm = _searchController.text;
     // Navigate to the search results page with the search term
-    Get.to(() => SearchingPage(searchTerm: searchTerm));
+    Get.to(() => widget.resultPage);
   }
 
   @override

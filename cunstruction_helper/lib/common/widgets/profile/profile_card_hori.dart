@@ -1,31 +1,39 @@
 import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class CompanyProfileCard extends StatelessWidget {
-  final String companyName;
+class ProfileCardHori extends StatelessWidget {
+  final String fullName;
   final String rank;
   final String image;
   final String rate;
   final String isverified;
-  final String cunstructionType;
-  final String experience;
+  final String jobTitle;
+  final String category;
+  final String location;
+  final int rangeLow;
+  final int rangeHigh;
+
   final VoidCallback onHirePressed;
 
-  const CompanyProfileCard(
-      {super.key,
-      required this.companyName,
-      required this.rank,
-      required this.image,
-      required this.rate,
-      required this.isverified,
-      required this.cunstructionType,
-      required this.experience,
-      required this.onHirePressed});
+  ProfileCardHori({
+    Key? key,
+    required this.fullName,
+    required this.rank,
+    required this.image,
+    required this.rate,
+    required this.isverified,
+    required this.jobTitle,
+    required this.category,
+    required this.location,
+    required this.rangeLow,
+    required this.rangeHigh,
+    required this.onHirePressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 8,
+      width: MediaQuery.of(context).size.width * 0.9,
       child: Card(
         color: const Color.fromARGB(255, 242, 248, 255),
         elevation: 5,
@@ -47,7 +55,7 @@ class CompanyProfileCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          companyName,
+                          fullName,
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -108,17 +116,15 @@ class CompanyProfileCard extends StatelessWidget {
               ),
               const SizedBox(height: 10), // Reduced height
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        cunstructionType,
+                        jobTitle,
                         style: const TextStyle(
                           fontSize: 20,
-                          color: Color.fromARGB(221, 29, 28, 28),
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -127,28 +133,6 @@ class CompanyProfileCard extends StatelessWidget {
                           style: DefaultTextStyle.of(context).style,
                           children: <TextSpan>[
                             const TextSpan(
-                              text: 'Experience: ',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color:
-                                    Colors.black38, // Set your preferred color
-                              ),
-                            ),
-                            TextSpan(
-                              text: '$experience years',
-                              style: const TextStyle(
-                                fontSize: 14, // Set your preferred font size
-                                color: Colors.black, // Set your preferred color
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      RichText(
-                        text: TextSpan(
-                          style: DefaultTextStyle.of(context).style,
-                          children: const <TextSpan>[
-                            TextSpan(
                               text: 'per Hour: ',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -156,9 +140,9 @@ class CompanyProfileCard extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: '20 projects Done',
-                              style: TextStyle(
-                                fontSize: 14,
+                              text: 'Rs$rangeLow-$rangeHigh',
+                              style: const TextStyle(
+                                fontSize: 16,
                                 fontWeight: FontWeight.w700,
                                 color: TColors.appAccentColor,
                               ),
@@ -168,30 +152,26 @@ class CompanyProfileCard extends StatelessWidget {
                       ),
                     ],
                   ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                      ),
+                      onPressed: onHirePressed,
+                      child: const Text(
+                        'Hire',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: MediaQuery.of(context).size.height * 0.08,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  onPressed: onHirePressed,
-                  child: const Text(
-                    'HIRE US',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
               ),
             ],
           ),

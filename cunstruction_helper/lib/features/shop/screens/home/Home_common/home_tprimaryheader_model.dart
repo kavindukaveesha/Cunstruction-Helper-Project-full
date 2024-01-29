@@ -70,7 +70,7 @@ class TprimaryHeaderModel extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-            child: SearchBarContainer(),
+            child: SearchBarContainer(resultPage: SearchResultPage()),
           ),
           const SizedBox(height: 10),
         ],

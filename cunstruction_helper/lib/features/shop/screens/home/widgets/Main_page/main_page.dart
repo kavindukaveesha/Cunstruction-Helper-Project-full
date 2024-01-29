@@ -1,11 +1,12 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../../utils/constants/colors.dart';
 import '../../../../../../utils/constants/image_strings.dart';
 
 import '../../../../../../utils/constants/text_strings.dart';
+import '../../../../../user/Main_profile/user_profile_main_page/profile_main_screen.dart';
 import '../tab_bar_pages/tab_bar_applications.dart';
 import '../tab_bar_pages/tab_bar_companies.dart';
 import '../tab_bar_pages/tab_bar_employee.dart';
@@ -53,12 +54,17 @@ class HomePage1 extends StatelessWidget {
             onTap: () {
               // Navigate to profile page when the profile button is clicked
             },
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                radius: 16, // Adjust the size as needed
-                backgroundImage: AssetImage(
-                    TImages.profile), // Replace with your image asset
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  Get.to(() => const ProfileScreen());
+                },
+                child: const CircleAvatar(
+                  radius: 16, // Adjust the size as needed
+                  backgroundImage: AssetImage(
+                      TImages.profile), // Replace with your image asset
+                ),
               ),
             ),
           )

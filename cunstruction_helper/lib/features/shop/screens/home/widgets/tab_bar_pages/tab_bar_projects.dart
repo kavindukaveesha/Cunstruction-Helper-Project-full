@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../common/widgets/filter_buttons/filter_buttons.dart';
 import '../../../Advertistment/Project_selling_advertistment/screen/project_selling_ad_list.dart';
-import '../../../customers/screen/display_customers/all_companies_display_page.dart';
+import '../../../customers/screen/display_customers/all_customers_display_page.dart';
 import '../../../customers/screen/top_customers_row/Company_row_list.dart';
 import '../../../searching_result/pages/searching page.dart';
 import '../../Home_common/home_tprimaryheader_model.dart';

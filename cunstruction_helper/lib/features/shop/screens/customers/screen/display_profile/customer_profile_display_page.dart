@@ -2,15 +2,16 @@ import 'package:cunstruction_helper/common/widgets/display_profile/display_profi
 import 'package:cunstruction_helper/common/widgets/display_profile/display_text_area_container.dart';
 import 'package:cunstruction_helper/features/shop/screens/Advertistment/expanded_widget.dart';
 import 'package:cunstruction_helper/features/shop/screens/Employee/controller/get_all_employees.dart';
+import 'package:cunstruction_helper/features/shop/screens/customers/model/customer_model.dart';
 
 import 'package:cunstruction_helper/utils/constants/colors.dart';
-import 'package:cunstruction_helper/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CompanyProfileDisplayPAge extends StatelessWidget {
-  CompanyProfileDisplayPAge({
-    super.key,
+class CustomerProfileDisplayPAge extends StatelessWidget {
+  final CustomerModel customerModel;
+  CustomerProfileDisplayPAge({
+    super.key, required this.customerModel,
   });
   EmployeeController employeeController = EmployeeController();
   // final EmployeeModel employeeModel;
@@ -36,12 +37,12 @@ class CompanyProfileDisplayPAge extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const DisplayProfileHeader(
-                      userName: 'Maga Cunstruction',
+                   DisplayProfileHeader(
+                      userName: customerModel.customerName,
                       jobCategory: '',
-                      image: TImages.constructionBanner1,
-                      rank: '15',
-                      rate: '3.5',
+                      image:customerModel.image,
+                      rank: '12',
+                      rate: '4',
                       verified: true),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -49,15 +50,15 @@ class CompanyProfileDisplayPAge extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Company Informations',
+                          'Customer Informations',
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * .02,
                         ),
-                        const DisplayTextField(
-                            labelText: 'Company Name',
-                            text: 'Maga Cunstruction(pvt)',
+                         DisplayTextField(
+                            labelText: 'Customer Name',
+                            text:customerModel.customerName,
                             icon: Icons.person_outline_rounded),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * .02,
@@ -86,43 +87,7 @@ class CompanyProfileDisplayPAge extends StatelessWidget {
                     endIndent: 10,
                   ),
                   // Working Experience
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Working And Experience',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .02,
-                        ),
-                        const DisplayTextField(
-                            labelText: 'Company Category',
-                            text: 'Main Cunstructions',
-                            icon: Icons.category_outlined),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .02,
-                        ),
-                        const DisplayTextField(
-                            labelText: 'Working Experience',
-                            text: '3 Years',
-                            icon: Icons.work_outline_outlined),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .02,
-                        ),
-                        const Divider(
-                          // Add this divider for the black line
-                          color: Colors.black,
-                          thickness: 1,
-                          height: 20,
-                          indent: 10,
-                          endIndent: 10,
-                        ),
-                      ],
-                    ),
-                  ),
+                  
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(

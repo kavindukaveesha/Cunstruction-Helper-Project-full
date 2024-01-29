@@ -17,7 +17,7 @@ class CustomerController {
 
       return results.map((result) {
         return CustomerModel(
-          customerName: result['name']['first'],
+          customerName: '${result['name']['first']} ${result['name']['last']}',
           description: result['name']['last'],
           image: result['picture']['thumbnail'],
         );

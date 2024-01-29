@@ -1,7 +1,8 @@
+import 'package:cunstruction_helper/common/widgets/custom_shape/containers/search_container.dart';
 import 'package:cunstruction_helper/common/widgets/filter_buttons/filter_buttons.dart';
-import 'package:cunstruction_helper/features/shop/screens/company/screen/display_companies/company_list_page.dart';
 import 'package:cunstruction_helper/features/shop/screens/customers/controller/get_all_customers.dart';
 import 'package:cunstruction_helper/features/shop/screens/customers/model/customer_model.dart';
+import 'package:cunstruction_helper/features/shop/screens/customers/screen/display_customers/customers_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +17,6 @@ class AllCustomersPage extends StatefulWidget {
 }
 
 class _AllCustomersPageState extends State<AllCustomersPage> {
-  String selectedLocation = 'Colombo';
-  String selectedCategory = 'Electric';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +38,10 @@ class _AllCustomersPageState extends State<AllCustomersPage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            FilterButtonsRow(),
+            Padding(
+              padding: EdgeInsets.all(15.0),
+              child: SearchBarContainer(resultPage: AllCustomersPage()),
+            ),
             FutureBuilder<List<CustomerModel>>(
                 future: widget.customerController.fetchCustomers(),
                 builder: (context, snapshot) {
@@ -52,7 +53,7 @@ class _AllCustomersPageState extends State<AllCustomersPage> {
                     return Text('Error: ${snapshot.error}');
                   } else {
                     // Display your GridView using the fetched data
-                    List<CustomerModel> companies = snapshot.data!;
+                    List<CustomerModel> customers = snapshot.data!;
                     return Padding(
                       padding: const EdgeInsets.only(left: 15),
                       child: Row(
@@ -61,7 +62,7 @@ class _AllCustomersPageState extends State<AllCustomersPage> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text('${companies.length}')
+                          Text('${customers.length}')
                         ],
                       ),
                     );
@@ -69,7 +70,7 @@ class _AllCustomersPageState extends State<AllCustomersPage> {
                 }),
             const SizedBox(height: 8.0),
             Expanded(
-              child: VerCompanyList(),
+              child: CustomerList(),
             ),
           ],
         ),
