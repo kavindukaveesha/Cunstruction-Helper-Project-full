@@ -1,11 +1,14 @@
 class RegistrationData {
   final String companyId;
-  final String employeeId;
-  final String customerId;
+  final String companyName;
+  final String companyEmail;
+  final String companyPhoneNumber;
+  final String companyPassword;
 
-  RegistrationData({
-    required this.companyId,
-    required this.employeeId,
-    required this.customerId,
-  });
+  RegistrationData(
+      {required this.companyId,
+      required this.companyName,
+      required this.companyEmail,
+      required this.companyPhoneNumber,
+      required this.companyPassword});
 }
