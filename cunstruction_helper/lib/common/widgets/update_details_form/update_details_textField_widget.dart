@@ -15,8 +15,6 @@ class UpdateTextFieldModel {
   });
 }
 
-
-
 // Widget to handle each individual text field
 class TextWidget extends StatefulWidget {
   final UpdateTextFieldModel model;

@@ -4,17 +4,6 @@ class TImages {
   static const String splashImg =
       "assets/images/splash_screen_images/splashImg.png";
 
-
-// on boarding screen images
-  static const String onBrdImg1 =
-      "assets/images/onBoarding_screen_images/onBrdImg1.png";
-  static const String onBrdImg2 =
-      "assets/images/onBoarding_screen_images/onBrdImg2.png";
-  static const String onBrdImg3 =
-      "assets/images/onBoarding_screen_images/onBrdImg3.png";
-  static const String onBrdImg4 =
-      "assets/images/onBoarding_screen_images/onBrdImg4.png";
-
 // welcome screen image
   static const String wlcImg1 = "assets/images/welcome_images/w1.png";
 
@@ -23,14 +12,15 @@ class TImages {
   static const String googleLogo = "assets/images/logo/googleLogo.png";
   static const String signUpImg = "assets/images/welcome_images/signUpImg.png";
 
+// select role screen
+ static const String selectRoleImg = "assets/images/select_role/selectRole.png";
+
 // forget Password screeen
   static const String forgetPasswordImg =
       "assets/images/forget_password/fpImg.png";
   static const String propic = "assets/images/logo/proImg.webp";
 
-  // App logos
-  static const String darkAppLogo = 'assets/logos/splash_dark.png';
-  static const String lightAppLogo = 'assets/logos/splash_light.png';
+
 
   // Social Logos
   static const String google = 'assets/logos/google-icon.png';

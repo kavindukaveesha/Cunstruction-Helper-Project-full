@@ -10,47 +10,31 @@ class TTexts {
   static const String splashScreenSubTitle1 = "We provide ";
   static const String splashScreenSubTitle2 =
       "the best platform for Cunstruction field ";
-  static const String developby = "Develop by TeamX ";
+  static const String developby = "Develop by CH-Developers ";
 
 // onBoarding pages texts
+
   static const String onBrdTitle1 = "Cunstruction Companies";
   static const String onBrdSubTitle1 =
-      "You can find projects and hire employees for your companies";
-  static const String counterText1 = "1/4 ";
+      "Streamline company processes, enhance collaboration, and boost productivity by leveraging features tailored for construction companies.";
+  static const String counterText1 = "1/3 ";
 
-  static const String onBrdTitle2 = "Cunstruction Companies";
+  static const String onBrdTitle2 = "Cunstruction Projects";
   static const String onBrdSubTitle2 =
-      "You can find projects and hire employees for your companies";
-  static const String counterText2 = "2/4 ";
+      "Provide a personalized space for construction professionals to create their profiles, showcasing skills and experience.";
+  static const String counterText2 = "2/3";
 
-  static const String onBrdTitle3 = "Cunstruction Companies";
+  static const String onBrdTitle3 = "Employees";
   static const String onBrdSubTitle3 =
-      "You can find projects and hire employees for your companies";
-  static const String counterText3 = "3/4";
-
-  static const String onBrdTitle4 = "Cunstruction Projects";
-  static const String onBrdSubTitle4 =
       "Customers man Find Cunstruction companies to handle their projects";
-  static const String counterText4 = "4/4 ";
+  static const String counterText3 = "3/3 ";
 
 // welcome sceen texts
-  static const String wlcTitle = "Welcome to Construction Hub";
+  static const String wlcTitle = "Welcome to Construction Helper";
   static const String wlcSubTitle =
       "The Ultimate Platform for Seamless Connectivity Across the Construction Industry";
 
   // Global Texts
-
-  // OnBoarding Texts
-  static const String onBoardingTitle1 = "Company ";
-  static const String onBoardingTitle2 = "Project ";
-  static const String onBoardingTitle3 = "Employee";
-
-  static const String onBoardingSubTitle1 =
-      "Welcome to the Find Best Company. You can choose our Company do the your project or join the our company as a Employee";
-  static const String onBoardingSubTitle2 =
-      "Welcome to the Project. You can Publish your project and You can find the Best Company do your project. ";
-  static const String onBoardingSubTitle3 =
-      "From our DoorStep to yours - Swift,Secure, and Contactless Delivery";
 
   //  Authentication Form Text
   static const String firstName = "First Name  ";
@@ -79,6 +63,13 @@ class TTexts {
   static const String loginSubTitle =
       "We Are the Top provider. We supply all the thing you need in your Hand";
   static const String signupTitle = "Let's create your account";
+  static const String signupSubTitle =
+      "Unlock the Construction Zone: Sign in to Access Exclusive Features and Seamless Collaboration in the Building Industry";
+
+      static const String choseRoleTitle = "Choose Yor Role...";
+  static const String choseRoleSubTitle =
+      "Choose your role go ahead with registration";
+
   static const String forgetPasswordTitle = "Forget Password";
   static const String forgetPasswordSubTitle =
       "Dont't worry, Enter your email and we will send you a password reset link";

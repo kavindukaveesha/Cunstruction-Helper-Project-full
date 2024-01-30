@@ -8,68 +8,71 @@ import 'package:get/get_core/get_core.dart';
 import '../../../../common/fade_in_animation/animation_design.dart';
 import '../../../../common/fade_in_animation/fade_in_animation_controller.dart';
 import '../../../../common/fade_in_animation/fade_in_animation_model.dart';
+import '../../controller/splash_screen_controler/splash_screen_controller.dart';
 
 class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
+  SplashScreen({super.key});
+
+  final SplashController = Get.put(SplashScreenController());
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(FadeInAnimationController());
-    FadeInAnimationController.find.startAnimation();
+    SplashController.startAnimation();
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
         children: [
-          AppFadeAnimation(
-              durationInMs: 1600,
-              animatePosition: AnimatePosition(
-                  topAfter: TSizes.appDefaultsize * 4, topBefore: -30),
-              child: AnimatedOpacity(
+          Obx(
+            () => AnimatedPositioned(
                 duration: const Duration(milliseconds: 1600),
-                opacity: controller.animate.value ? 1 : 0,
-                child: Column(
-                  children: [
-                    Text(
-                      TTexts.appName,
-                      style: Theme.of(context).textTheme.headlineMedium,
-                    ),
-                    Text(
-                      TTexts.splashScreenSubTitle1,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                    Text(
-                      TTexts.splashScreenSubTitle1,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  ],
-                ),
-              )),
-          AppFadeAnimation(
-            durationInMs: 1600,
-            animatePosition: AnimatePosition(leftAfter: 0, leftBefore: 0),
-            child: AnimatedOpacity(
-              duration: const Duration(milliseconds: 1600),
-              opacity: controller.animate.value ? 1 : 0,
-              child: const Image(
-                image: AssetImage(
-                  TImages.splashImg,
-                ),
-                height: 400,
-              ),
-            ),
+                top: SplashController.animate.value
+                    ? TSizes.appDefaultsize * 4
+                    : -30,
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 1600),
+                  opacity: SplashController.animate.value ? 1 : 0,
+                  child: Column(
+                    children: [
+                      Text(
+                        TTexts.appName,
+                        style: Theme.of(context).textTheme.headlineMedium,
+                      ),
+                      Text(
+                        'Subtitle1',
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                      Text(
+                        'splashScreenSubTitle2',
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    ],
+                  ),
+                )),
           ),
-          AppFadeAnimation(
-              durationInMs: 1600,
-              animatePosition:
-                  AnimatePosition(bottunAfter: 20, bottunBefore: -30),
-              child: AnimatedOpacity(
+          Obx(
+            () => AnimatedPositioned(
                 duration: const Duration(milliseconds: 1600),
-                opacity: controller.animate.value ? 1 : 0,
+                bottom: 100,
+                left: SplashController.animate.value ? 10 : -40,
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 1600),
+                  opacity: SplashController.animate.value ? 1 : 0,
+                  child: const Image(
+                    image: AssetImage(
+                      TImages.splashImg,
+                    ),
+                    height: 400,
+                  ),
+                )),
+          ),
+          Obx(() => AnimatedPositioned(
+                duration: Duration(milliseconds: 1000),
+                bottom: SplashController.animate.value ? 20 : -30,
                 child: Text(
                   TTexts.developby,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
-              ))
+              )),
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../shop/screens/company/screen/user_profile/user_profile_company.dart';
+import '../../../shop/screens/company/screen/user_profile/company_user_profile_display.dart';
 import '../filter_location_screen/filter_list_home.dart';
 import '../help_center_screen/help_center_home.dart';
 import '../payment_card_remove_and_add/payment_list.dart';
@@ -9,9 +9,14 @@ import '../privacy_policy/privacy_policy_home.dart';
 import 'profile_menu.dart';
 import 'profile_picture.dart';
 
-class ProfileBody extends StatelessWidget {
+class ProfileBody extends StatefulWidget {
   const ProfileBody({super.key});
 
+  @override
+  State<ProfileBody> createState() => _ProfileBodyState();
+}
+
+class _ProfileBodyState extends State<ProfileBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +26,7 @@ class ProfileBody extends StatelessWidget {
         ProfileMenu(
             text: 'My Account Details',
             onPress: () {
-              Get.to(() => const CompanyUserProfile());
+              Get.to(() => const CompanyUserProfileDisplay());
             },
             iconName: Icons.account_circle_outlined),
         ProfileMenu(

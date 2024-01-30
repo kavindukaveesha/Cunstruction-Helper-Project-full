@@ -1,16 +1,17 @@
+import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../common/widgets/update_details_form/update_details_textField_widget.dart';
 
 // Main widget that contains the user profile information
-class CompanyUserProfile extends StatefulWidget {
-  const CompanyUserProfile({Key? key}) : super(key: key);
+class CompanyUserProfileData extends StatefulWidget {
+  const CompanyUserProfileData({Key? key}) : super(key: key);
 
   @override
-  State<CompanyUserProfile> createState() => _CompanyUserProfileState();
+  State<CompanyUserProfileData> createState() => _CompanyUserProfileDataState();
 }
 
-class _CompanyUserProfileState extends State<CompanyUserProfile> {
+class _CompanyUserProfileDataState extends State<CompanyUserProfileData> {
   late UpdateTextFieldModel comapnyNameModel;
   late UpdateTextFieldModel emailModel;
   late UpdateTextFieldModel cunstructionTypeModel;
@@ -67,22 +68,24 @@ class _CompanyUserProfileState extends State<CompanyUserProfile> {
 
     descriptionModel = UpdateTextFieldModel(
       controller: TextEditingController(),
-      textFieldName:
+      textFieldName: 'Description',
+      normalText:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit an ',
-      normalText: '3 years',
       icon: Icons.email,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Padding(
+      padding: const EdgeInsets.all(15.0),
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Widget for handling the Username text field
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Company Informations',
@@ -111,33 +114,30 @@ class _CompanyUserProfileState extends State<CompanyUserProfile> {
             endIndent: 10,
           ),
 
-          Column(children: [
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
               'Working And Experience',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            TextWidget(model: cunstructionTypeModel),
-            const SizedBox(height: 16),
-            // Widget for handling the Email text field
             TextWidget(model: workExModel),
             const SizedBox(height: 16),
           ]),
 
-          Column(children: [
-            Text(
-              'Description',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            TextWidget(model: descriptionModel),
-          ]),
+          TextWidget(model: descriptionModel),
           // Button to update the profile and print values
-          ElevatedButton(
+          TextButton(
             onPressed: () {
-              // Print the values of the text fields when the button is pressed
+              
               print('Username: ${comapnyNameModel.controller.text}');
               print('Email: ${emailModel.controller.text}');
             },
-            child: Text('Update Profile'),
+            child: const Text(
+              'Update Profile',
+              style: TextStyle(
+                  fontSize: 15,
+                  color: TColors.appAccentColor,
+                  fontWeight: FontWeight.w600),
+            ),
           ),
         ],
       ),

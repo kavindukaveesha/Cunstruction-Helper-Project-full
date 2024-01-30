@@ -1,3 +1,4 @@
+import 'package:cunstruction_helper/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class FormHeader extends StatelessWidget {
@@ -23,16 +24,16 @@ class FormHeader extends StatelessWidget {
       children: [
         Image(
           image: AssetImage(image),
-          height: height * hSize,
+          height: height * 0.3,
         ),
         SizedBox(height: height * 0.025),
         Text(
-          title,
-          style: Theme.of(context).textTheme.displaySmall,
+          TTexts.loginTitle,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         Text(
-          subtitle,
-          textAlign: textAlign,
+          TTexts.loginSubTitle,
+          style: Theme.of(context).textTheme.labelSmall,
         )
       ],
     );

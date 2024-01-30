@@ -1,14 +1,18 @@
+import 'package:cunstruction_helper/features/authentication/screens/select_UserRole_screen/select_user_role_screen.dart';
 import 'package:cunstruction_helper/utils/constants/colors.dart';
 import 'package:cunstruction_helper/utils/constants/image_strings.dart';
 import 'package:cunstruction_helper/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../utils/constants/sizes.dart';
+import '../../controller/registration_controller/registration_controller.dart';
 import '../login_screen/login_screen.dart';
 import '../signup_screen/signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  final RegistrationController registrationController =
+      RegistrationController();
+  WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +21,7 @@ class WelcomeScreen extends StatelessWidget {
     var isDarkMood = brightness == Brightness.dark;
     var height = mediaQuery.size.height;
     return Scaffold(
-      backgroundColor:
-          isDarkMood ? TColors.appSecondaryColor : TColors.appPrimaryColor,
+      backgroundColor: isDarkMood ? TColors.appSecondaryColor : Colors.white,
       body: Container(
         padding: const EdgeInsets.all(TSizes.appDefaultsize),
         child: Column(
@@ -32,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Text(
                   TTexts.wlcTitle,
-                  style: Theme.of(context).textTheme.headlineMedium,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
@@ -64,7 +67,9 @@ class WelcomeScreen extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.to(const SignUpScreen());
+                      Get.to(
+                        SelectUserRoleScreen(),
+                      );
                     },
                     child: Text(
                       TTexts.appRegister.toUpperCase(),

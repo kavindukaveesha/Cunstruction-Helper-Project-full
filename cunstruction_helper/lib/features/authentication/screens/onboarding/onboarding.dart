@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/text_strings.dart';
-import '../../controllers_onboarding/onboarding_controller.dart';
+import '../../controller/controllers_onboarding/onboarding_controller.dart';
 import 'widget/onboarding_dot_navigation.dart';
 import 'widget/onboarding_next_button.dart';
 import 'widget/onboarding_page.dart';
@@ -24,21 +23,21 @@ class OnBoardingScreen extends StatelessWidget {
           PageView(
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
-            children:  const [
+            children: const [
               OnBoardingPage(
-                 image: TImages.onBoardingImage1,
-                 title: TTexts.onBoardingTitle1,
-                 subTitle: TTexts.onBoardingSubTitle1,
-              ),
-              OnBoardingPage(
-                image: TImages.onBoardingImage2,
-                title: TTexts.onBoardingTitle2,
-                subTitle: TTexts.onBoardingSubTitle2,
+                image: TImages.onBoardingImage1,
+                title: TTexts.onBrdTitle1,
+                subTitle: TTexts.onBrdSubTitle1,
               ),
               OnBoardingPage(
                 image: TImages.onBoardingImage3,
-                title: TTexts.onBoardingTitle3,
-                subTitle: TTexts.onBoardingSubTitle3,
+                title: TTexts.onBrdTitle2,
+                subTitle: TTexts.onBrdSubTitle2,
+              ),
+              OnBoardingPage(
+                image: TImages.onBoardingImage2,
+                title: TTexts.onBrdTitle3,
+                subTitle: TTexts.onBrdSubTitle3,
               ),
             ],
           ),
@@ -46,10 +45,8 @@ class OnBoardingScreen extends StatelessWidget {
           /// Skip Button
           const OnBoardingSkip(),
 
-
           /// Dot Navigation SmoothPageIndicator
           const OnBoardingDotNavigation(),
-
 
           /// Circular Button
           const OnBoardingNextButton(),
@@ -58,9 +55,3 @@ class OnBoardingScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-

@@ -2,9 +2,7 @@ import 'package:cunstruction_helper/features/authentication/screens/welcome_scre
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 
-
-
-class OnBoardingController extends GetxController{
+class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
 
   /// Variables
@@ -22,8 +20,8 @@ class OnBoardingController extends GetxController{
 
   /// Update current index & jump to next page
   void nextPage() {
-    if(currentPageIndex.value == 2){
-      Get.offAll(const WelcomeScreen ());
+    if (currentPageIndex.value == 2) {
+      Get.offAll(WelcomeScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
