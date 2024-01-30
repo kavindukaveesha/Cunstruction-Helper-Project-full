@@ -14,7 +14,7 @@ class RegistrationController extends GetxController {
 
   // Implement methods to send data to the backend
   // For example:
-  Future<List<CompanyModel>> fetchCompanies() async {
+  Future<List<CompanyModel>> registerCompany() async {
     const url = 'https://randomuser.me/api/?results=10';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
