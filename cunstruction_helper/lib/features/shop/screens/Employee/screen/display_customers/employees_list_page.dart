@@ -6,8 +6,6 @@ import 'package:cunstruction_helper/features/shop/screens/Employee/screen/displa
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
-
 class EmployeesList extends StatelessWidget {
   final EmployeeController employeeController = EmployeeController();
   EmployeesList({Key? key}) : super(key: key);
@@ -52,7 +50,7 @@ class EmployeesList extends StatelessWidget {
                           children: [
                             Text(
                               category['categoryName'],
-                              style: Theme.of(context).textTheme.headline6,
+                              style: Theme.of(context).textTheme.headlineMedium,
                             ),
                             const Text('(${6})')
                           ],

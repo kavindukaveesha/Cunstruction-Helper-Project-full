@@ -26,7 +26,7 @@ class HelpCenterHome extends StatelessWidget {
             const SizedBox(height: 25.0),
             Text(
               'Helping Details',
-              style: Theme.of(context).textTheme.headline5!.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                     decoration: TextDecoration.underline,
                     color: Colors.red,
                     fontWeight: FontWeight.w800,

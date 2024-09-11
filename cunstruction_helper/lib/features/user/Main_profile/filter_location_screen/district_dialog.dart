@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class DistrictCard extends StatefulWidget {
   @override
   _DistrictCardState createState() => _DistrictCardState();
@@ -14,7 +13,9 @@ class _DistrictCardState extends State<DistrictCard> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Select Your desired district',),
+      title: const Text(
+        'Select Your desired district',
+      ),
       content: SingleChildScrollView(
         child: Column(
           children: [
@@ -87,10 +88,12 @@ class _DistrictCardState extends State<DistrictCard> {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.yellow,
+                    backgroundColor: Colors.yellow,
                     foregroundColor: Colors.blue,
                   ),
-                  child: const Text('Reset', ),
+                  child: const Text(
+                    'Reset',
+                  ),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -99,7 +102,7 @@ class _DistrictCardState extends State<DistrictCard> {
                     // You can access selectedDistricts list to get the selected districts
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.yellow,
+                    backgroundColor: Colors.yellow,
                     foregroundColor: Colors.blue,
                   ),
                   child: const Text('Apply'),
@@ -126,7 +129,7 @@ class _DistrictCardState extends State<DistrictCard> {
         });
       },
       style: ElevatedButton.styleFrom(
-        primary: isSelected ? Colors.green : null,
+        backgroundColor: isSelected ? Colors.green : null,
       ),
       child: Text(district),
     );

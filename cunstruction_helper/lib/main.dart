@@ -1,4 +1,5 @@
 import 'package:cunstruction_helper/features/authentication/screens/splash_screen/splash_screen.dart';
+import 'package:cunstruction_helper/features/shop/screens/home/widgets/tab_bar_pages/tabbar_home.dart';
 import 'package:cunstruction_helper/navigation_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         theme: TAppTheme.lightTheme,
         darkTheme: TAppTheme.darkTheme,
-        home: SplashScreen(),
+        home: HomePage(),
       ),
     );
   }
